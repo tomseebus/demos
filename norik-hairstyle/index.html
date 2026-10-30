@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Norik Hairstyle</title>
+<meta name="description" content="Norik Hairstyle – kapsalon aan de Oudewand in Zutphen. Knippen voor hem en haar. Plan je afspraak, of loop binnen als het licht op groen staat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1ea;
+    --bg-2: #efe7dc;
+    --card: #fffcf8;
+    --line: #e4d9cc;
+    --text: #1d1a17;
+    --muted: #6e655c;
+    --accent: #24312c;
+    --accent-2: #3b4e46;
+    --star: #9a6436;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: Outfit, system-ui, sans-serif; line-height: 1.6; }
+  a { color: inherit; }
+  img { max-width: 100%; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; letter-spacing: 0; line-height: 1.05; }
+  h2 { font-size: clamp(2.2rem, 5vw, 3.3rem); margin-bottom: 8px; }
+  .eyebrow { color: var(--accent-2); font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; }
+  .sub { color: var(--muted); max-width: 540px; }
+  section { padding: 88px 0; scroll-margin-top: 72px; }
+  .btn { display: inline-block; background: var(--accent); color: #f6f1ea; padding: 14px 26px; border-radius: 999px; font-weight: 600; text-decoration: none; border: 0; cursor: pointer; font-size: 1rem; font-family: inherit; transition: background .2s, transform .2s; }
+  .btn:hover { background: var(--accent-2); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .btn.ghost:hover { border-color: var(--accent); background: transparent; }
+
+  nav { position: fixed; inset: 0 0 auto 0; z-index: 50; background: rgba(246,241,234,.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .logo { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.85rem; letter-spacing: .02em; text-decoration: none; }
+  .logo span { color: var(--star); }
+  nav ul { display: flex; gap: 26px; list-style: none; }
+  nav ul a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+  nav ul a:hover { color: var(--text); }
+  nav .btn { padding: 10px 18px; font-size: .9rem; }
+  @media (max-width: 760px) { nav ul { display: none; } }
+
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1.05fr .95fr; padding-top: 72px; }
+  .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 48px 8vw 64px  max(20px, calc((100vw - 1100px) / 2)); }
+  .hero h1 { font-size: clamp(3.2rem, 6.4vw, 5.4rem); margin: 14px 0 18px; }
+  .hero p { color: var(--muted); font-size: 1.12rem; max-width: 460px; margin-bottom: 28px; }
+  .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-photo { background: url("images/binnen.jpg") center/cover; min-height: 420px; }
+  .rating-pill { display: inline-flex; align-items: center; gap: 8px; margin-top: 36px; color: var(--muted); font-size: .95rem; }
+  .stars { color: var(--star); letter-spacing: 2px; }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-copy { padding: 36px 20px 48px; }
+    .hero-photo { min-height: 320px; order: -1; }
+  }
+
+  .lights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; max-width: 520px; }
+  .light { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: .86rem; color: var(--muted); }
+  .light b { display: flex; align-items: center; gap: 8px; color: var(--text); font-weight: 600; margin-bottom: 2px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .dot.r { background: #d9483b; }
+  .dot.o { background: #e3a008; }
+  .dot.g { background: #2f9e55; }
+  @media (max-width: 520px) { .lights { grid-template-columns: 1fr; } }
+
+  #diensten { background: var(--bg-2); }
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 36px; }
+  .service { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; gap: 8px; }
+  .service h3 { font-size: 1.8rem; }
+  .service p { color: var(--muted); font-size: .95rem; flex: 1; }
+  .service button { margin-top: 10px; align-self: flex-start; background: none; border: 0; color: var(--accent); font-weight: 600; cursor: pointer; font-size: .95rem; padding: 0; font-family: inherit; }
+
+  .booking { display: grid; grid-template-columns: 1fr 1.25fr; gap: 48px; align-items: start; }
+  @media (max-width: 860px) { .booking { grid-template-columns: 1fr; } }
+  .steps { list-style: none; margin-top: 26px; display: grid; gap: 14px; }
+  .steps li { display: flex; gap: 14px; color: var(--muted); }
+  .steps b { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--accent); color: var(--accent); display: grid; place-items: center; font-size: .85rem; }
+  form { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: grid; gap: 18px; }
+  label { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 8px; font-weight: 500; }
+  input, select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 13px 14px; font: inherit; }
+  input:focus, select:focus { outline: none; border-color: var(--accent); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+  .slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(74px, 1fr)); gap: 8px; }
+  .slot { background: var(--bg); border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: 9px 0; cursor: pointer; font: inherit; font-size: .9rem; }
+  .slot:hover:not(:disabled) { border-color: var(--accent); }
+  .slot.active { background: var(--accent); color: #f6f1ea; border-color: var(--accent); font-weight: 600; }
+  .slot:disabled { opacity: .35; text-decoration: line-through; cursor: not-allowed; }
+  .hint { color: var(--muted); font-size: .88rem; }
+  .summary { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 18px; gap: 14px; flex-wrap: wrap; }
+  .error { color: #a33b32; font-size: .88rem; display: none; }
+  .confirm { display: none; text-align: center; padding: 40px 28px; background: var(--card); border: 1px solid var(--accent); border-radius: var(--radius); }
+  .confirm .check { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: #f6f1ea; display: grid; place-items: center; margin: 0 auto 18px; font-size: 2rem; }
+  .confirm h3 { font-size: 2.2rem; margin-bottom: 10px; }
+  .confirm p { color: var(--muted); margin-bottom: 6px; }
+  .confirm .btn { margin-top: 22px; }
+
+  #reviews { background: var(--bg-2); }
+  .reviews-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; }
+  .score { text-align: right; }
+  .score .big { font-family: "Cormorant Garamond", Georgia, serif; font-size: 3.6rem; line-height: 1; }
+  .score small { color: var(--muted); display: block; }
+  .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 36px; }
+  .review { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+  .review .who { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; background: #e7efe9; color: var(--accent); display: grid; place-items: center; font-weight: 600; }
+  .review .name { font-weight: 600; }
+  .review .when { color: var(--muted); font-size: .8rem; }
+  .review p { color: #3a342e; font-size: .95rem; margin-top: 8px; }
+  .g-link { display: inline-block; margin-top: 26px; color: var(--accent); text-decoration: none; font-weight: 600; }
+
+  .gallery { display: grid; grid-template-columns: 1.2fr .8fr; gap: 12px; margin-top: 36px; }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; min-height: 240px; }
+  .gallery img:first-child { min-height: 380px; }
+  @media (max-width: 700px) { .gallery { grid-template-columns: 1fr; } .gallery img, .gallery img:first-child { min-height: 220px; } }
+
+  .contact { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; }
+  @media (max-width: 860px) { .contact { grid-template-columns: 1fr; } }
+  .info { display: grid; gap: 26px; margin-top: 28px; }
+  .info h3 { font-size: 1.5rem; margin-bottom: 4px; }
+  .info p, .info td { color: var(--muted); }
+  .hours { border-collapse: collapse; width: 100%; max-width: 340px; }
+  .hours td { padding: 4px 0; }
+  .hours td:last-child { text-align: right; color: var(--text); }
+  .hours tr.today td { color: var(--accent); font-weight: 600; }
+  .map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); min-height: 380px; }
+  .map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; }
+
+  .team { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 280px)); gap: 16px; margin-top: 32px; }
+  .barber { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+  .barber h3 { font-size: 1.8rem; }
+  .barber p { color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: .88rem; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  footer a { color: var(--muted); }
+
+  .wa { position: fixed; left: 20px; bottom: 20px; z-index: 60; width: 60px; height: 60px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; box-shadow: 0 6px 24px rgba(36,49,44,.28); transition: transform .2s; }
+  .wa:hover { transform: scale(1.06); }
+  .wa svg { width: 26px; height: 26px; fill: #f6f1ea; }
+  .wa::after { content: "Bel de zaak"; position: absolute; left: 72px; white-space: nowrap; background: #fff; color: #111; padding: 7px 12px; border-radius: 8px; font-size: .85rem; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .wa:hover::after { opacity: 1; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">Norik<span>.</span></a>
+    <ul>
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#afspraak">Afspraak</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#zaak">De zaak</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#afspraak" class="btn">Plan een afspraak</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-copy">
+    <div class="eyebrow">Kapsalon · Oudewand · <span data-city></span></div>
+    <h1>Je vaste kapper, om de hoek.</h1>
+    <p>Norik Hairstyle knipt hem en haar in een lichte zaak aan de Oudewand. Loop binnen als het licht op groen staat, of plan hier je afspraak.</p>
+    <div class="actions">
+      <a href="#afspraak" class="btn">Afspraak maken</a>
+      <a href="#zaak" class="btn ghost">Bekijk de zaak</a>
+    </div>
+    <div class="lights">
+      <div class="light"><b><i class="dot r"></i> Rood</b> Alleen op afspraak.</div>
+      <div class="light"><b><i class="dot o"></i> Oranje</b> Even vragen en binnen wachten.</div>
+      <div class="light"><b><i class="dot g"></i> Groen</b> Je kunt meteen geholpen worden.</div>
+    </div>
+    <div class="rating-pill"><span class="stars">★★★★★</span> <span data-rating-text></span></div>
+  </div>
+  <div class="hero-photo" role="img" aria-label="Interieur van Norik Hairstyle"></div>
+</header>
+
+<section id="diensten">
+  <div class="wrap">
+    <div class="eyebrow">In de zaak</div>
+    <h2>Wat je er laat doen</h2>
+    <p class="sub">Prijzen staan niet online. Die hoor je in de zaak, en klanten noemen ze netjes en betaalbaar. Kies een behandeling en plan een moment.</p>
+    <div class="services" id="services"></div>
+  </div>
+</section>
+
+<section id="afspraak">
+  <div class="wrap booking">
+    <div>
+      <div class="eyebrow">Online boeken</div>
+      <h2>Plan je afspraak</h2>
+      <p class="sub">Kies wat je wilt, een dag en een tijd. Maandag en zondag is de zaak dicht.</p>
+      <ol class="steps">
+        <li><b>1</b><span>Kies knippen, of knippen met baard</span></li>
+        <li><b>2</b><span>Kies een datum en een vrij moment</span></li>
+        <li><b>3</b><span>Laat je naam en nummer achter</span></li>
+      </ol>
+    </div>
+    <div>
+      <form id="bookForm" novalidate>
+        <div>
+          <label for="service">Behandeling</label>
+          <select id="service"></select>
+        </div>
+        <div>
+          <label for="date">Datum</label>
+          <input type="date" id="date">
+          <p class="hint" id="dateHint" style="margin-top:8px"></p>
+        </div>
+        <div>
+          <label>Tijd</label>
+          <div class="slots" id="slots"><p class="hint">Kies eerst een datum.</p></div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="name">Naam</label>
+            <input id="name" autocomplete="name" placeholder="Je naam">
+          </div>
+          <div>
+            <label for="phone">Telefoon</label>
+            <input id="phone" type="tel" autocomplete="tel" placeholder="06 12345678">
+          </div>
+        </div>
+        <p class="error" id="error"></p>
+        <div class="summary">
+          <span class="hint">De prijs hoor je in de zaak.</span>
+          <button type="submit" class="btn">Bevestig afspraak</button>
+        </div>
+      </form>
+      <div class="confirm" id="confirm">
+        <div class="check">✓</div>
+        <h3>Afspraak genoteerd</h3>
+        <p id="confirmText"></p>
+        <p>Tot snel bij Norik Hairstyle.</p>
+        <button class="btn ghost" id="again">Nieuwe afspraak</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div>
+        <div class="eyebrow">Reviews</div>
+        <h2>Wat klanten zeggen</h2>
+        <p class="sub"><span data-rating></span> op Google · <span data-review-count></span></p>
+      </div>
+      <div class="score">
+        <div class="big" data-rating></div>
+        <span class="stars">★★★★★</span>
+        <small data-review-count></small>
+      </div>
+    </div>
+    <div class="reviews" id="reviewList"></div>
+    <a class="g-link" id="gLink" target="_blank" rel="noopener"></a>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="eyebrow">Achter de schaar</div>
+    <h2>Norrik</h2>
+    <p class="sub">Vaste klanten schrijven dat ze één keer hoeven te zeggen hoe ze het willen. Daarna weet Norrik het.</p>
+    <div class="team" id="teamList"></div>
+  </div>
+</section>
+
+<section id="zaak" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="eyebrow">Oudewand 3</div>
+    <h2>De zaak</h2>
+    <p class="sub">Foto's van Google. Binnen een stenen muur en zwarte stoelen, buiten het stoplicht bij de deur.</p>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div>
+      <div class="eyebrow">Langskomen</div>
+      <h2>Contact</h2>
+      <div class="info">
+        <div>
+          <h3>Adres</h3>
+          <p data-address></p>
+        </div>
+        <div>
+          <h3>Openingstijden</h3>
+          <table class="hours" id="hours"></table>
+        </div>
+        <div>
+          <h3>Bellen</h3>
+          <p><a data-phone href=""></a></p>
+        </div>
+      </div>
+    </div>
+    <div class="map"><iframe id="map" loading="lazy" title="Locatie Norik Hairstyle"></iframe></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Norik Hairstyle</span>
+    <span><a id="gFoot" target="_blank" rel="noopener">Google-reviews</a></span>
+  </div>
+</footer>
+
+<a class="wa" id="call" aria-label="Bellen">
+  <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+</a>
+
+<script>
+/* Gegevens van Google Maps, 30 okt 2026.
+   Geen openbare prijslijst en geen Instagram-account gevonden.
+   Vrijdag sluit volgens Google om 18:00. */
+const CONFIG = {
+  name: "Norik Hairstyle",
+  city: "Zutphen",
+  phone: "+31575471521",
+  phoneDisplay: "0575 47 15 21",
+  address: "Oudewand 3, 7201 LJ Zutphen",
+  lat: 52.1427031,
+  lng: 6.1968328,
+  reviewsUrl: "https://www.google.com/maps/place/?q=place_id:ChIJJ_La3m6Ux0cRwpNg9ZkK5Jk",
+  reviewSource: "Google",
+  rating: "4,7",
+  reviewCount: 75,
+  services: [
+    { name: "Knippen", desc: "Voor hem en haar." },
+    { name: "Knippen en baard", desc: "Kort haar en de baard in één beurt." },
+    { name: "Styling", desc: "Haar in model brengen." },
+  ],
+  barbers: [
+    { name: "Norrik", role: "Kapper" },
+  ],
+  hours: {
+    1: null,
+    2: ["09:00", "18:00"],
+    3: ["09:00", "18:00"],
+    4: ["09:00", "18:00"],
+    5: ["09:00", "18:00"],
+    6: ["09:00", "17:00"],
+    0: null,
+  },
+  reviews: [
+    { name: "Robin", when: "3 jaar geleden", text: "Al ruim 12 jaar kom ik bij N hairstyle. 1 keer heb ik verteld hoe ik mijn haar graag draag en sinds dien heb ik geen woord meer hoeven te zeggen, Norrik weet altijd precies hoe ik het hebben wil. Norrik is altijd goed gehumeurd en geïnteresseerd, van harte aan te raden!" },
+    { name: "Mart Boes", when: "2 jaar geleden", text: "Prima kapper, Heb korte haren en baard. Erg mooi, nauwkeurig en precies geknipt. De tijd nemen voor je klant en het gezellig praatje maken het voor mij helemaal af." },
+    { name: "N N", when: "2 jaar geleden", text: "Vriendelijke, goede en zeer ervaren kapper icm een goed gesprek voor een nette prijs! Wat wil je nog meer!?" },
+    { name: "Roos J", when: "7 jaar geleden", text: "Niet eerder zo tevreden geweest met mijn haar! Hele fijne kapper en kapster, goed betaalbaar, lieve mensen! En om terug te komen op een van de onderstaande recensies, inmiddels kun je er pinnen!" },
+  ],
+  gallery: [
+    { src: "images/binnen.jpg", alt: "Interieur van Norik Hairstyle" },
+    { src: "images/gevel.jpg", alt: "De deur van Norik Hairstyle aan de Oudewand" },
+  ],
+};
+
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+const DAYS = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
+const countText = `${CONFIG.reviewCount} reviews op ${CONFIG.reviewSource}`;
+
+$$("[data-city]").forEach(el => el.textContent = CONFIG.city);
+$$("[data-address]").forEach(el => el.textContent = CONFIG.address);
+$$("[data-rating]").forEach(el => el.textContent = CONFIG.rating);
+$$("[data-review-count]").forEach(el => el.textContent = countText);
+$$("[data-rating-text]").forEach(el => el.textContent = `${CONFIG.rating} op ${CONFIG.reviewSource} · ${CONFIG.reviewCount} reviews`);
+$$("[data-phone]").forEach(el => { el.textContent = CONFIG.phoneDisplay; el.href = `tel:${CONFIG.phone}`; });
+$("#call").href = `tel:${CONFIG.phone}`;
+$("#gLink").href = $("#gFoot").href = CONFIG.reviewsUrl;
+$("#gLink").textContent = `Alle ${CONFIG.reviewCount} reviews op Google →`;
+$("#map").src = `https://maps.google.com/maps?q=${CONFIG.lat},${CONFIG.lng}&z=17&output=embed`;
+$("#year").textContent = new Date().getFullYear();
+
+$("#services").innerHTML = CONFIG.services.map((s, i) => `
+  <div class="service">
+    <h3>${s.name}</h3>
+    <p>${s.desc}</p>
+    <button type="button" data-pick="${i}">Plan deze →</button>
+  </div>`).join("");
+$("#service").innerHTML = CONFIG.services.map((s, i) => `<option value="${i}">${s.name}</option>`).join("");
+$$("[data-pick]").forEach(b => b.onclick = () => {
+  $("#service").value = b.dataset.pick;
+  $("#afspraak").scrollIntoView();
+});
+
+$("#teamList").innerHTML = CONFIG.barbers.map(b => `
+  <div class="barber"><h3>${b.name}</h3><p>${b.role}</p></div>`).join("");
+
+$("#reviewList").innerHTML = CONFIG.reviews.map(r => `
+  <div class="review">
+    <div class="who"><div class="avatar">${r.name[0]}</div><div><div class="name">${r.name}</div><div class="when">${r.when} · Google-review</div></div></div>
+    <span class="stars">★★★★★</span>
+    <p>${r.text}</p>
+  </div>`).join("");
+
+$("#gallery").innerHTML = CONFIG.gallery.map(item => `<img src="${item.src}" alt="${item.alt}" loading="lazy">`).join("");
+
+const todayIdx = new Date().getDay();
+$("#hours").innerHTML = [1, 2, 3, 4, 5, 6, 0].map(d => {
+  const h = CONFIG.hours[d];
+  return `<tr class="${d === todayIdx ? "today" : ""}"><td>${DAYS[d]}</td><td>${h ? h.join(" – ") : "Gesloten"}</td></tr>`;
+}).join("");
+
+const toMin = t => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
+const toTime = m => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+let chosenTime = null;
+const dateInput = $("#date");
+const now = new Date();
+dateInput.min = iso(now);
+dateInput.max = iso(new Date(now.getFullYear(), now.getMonth() + 2, now.getDate()));
+
+function isTaken(dateStr, t) {
+  let h = 0;
+  for (const c of dateStr + t) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return h % 4 === 0;
+}
+
+function renderSlots() {
+  chosenTime = null;
+  const box = $("#slots");
+  if (!dateInput.value) { box.innerHTML = `<p class="hint">Kies eerst een datum.</p>`; return; }
+  const d = new Date(dateInput.value + "T00:00");
+  const h = CONFIG.hours[d.getDay()];
+  $("#dateHint").textContent = "";
+  if (!h) { box.innerHTML = `<p class="hint">Op ${DAYS[d.getDay()].toLowerCase()} is de zaak dicht. Kies een andere dag.</p>`; return; }
+  const dur = 30;
+  const isToday = dateInput.value === iso(new Date());
+  const nowMin = new Date().getHours() * 60 + new Date().getMinutes();
+  const slots = [];
+  for (let m = toMin(h[0]); m + dur <= toMin(h[1]); m += 30) {
+    const t = toTime(m);
+    const disabled = (isToday && m <= nowMin) || isTaken(dateInput.value, t);
+    slots.push(`<button type="button" class="slot" data-t="${t}"${disabled ? " disabled" : ""}>${t}</button>`);
+  }
+  box.innerHTML = slots.join("") || `<p class="hint">Geen tijden meer vandaag.</p>`;
+  box.querySelectorAll(".slot").forEach(b => b.onclick = () => {
+    box.querySelectorAll(".slot").forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    chosenTime = b.dataset.t;
+  });
+}
+
+dateInput.onchange = renderSlots;
+
+$("#bookForm").onsubmit = e => {
+  e.preventDefault();
+  const err = $("#error");
+  const name = $("#name").value.trim();
+  const phone = $("#phone").value.trim();
+  const msg = !dateInput.value ? "Kies een datum." :
+              !chosenTime ? "Kies een tijd." :
+              !name ? "Vul je naam in." :
+              phone.replace(/\D/g, "").length < 10 ? "Vul een geldig telefoonnummer in." : "";
+  if (msg) { err.textContent = msg; err.style.display = "block"; return; }
+  err.style.display = "none";
+  const s = CONFIG.services[$("#service").value];
+  const d = new Date(dateInput.value + "T00:00");
+  const dateNice = d.toLocaleDateString("nl-NL", { weekday: "long", day: "numeric", month: "long" });
+  $("#confirmText").innerHTML = `<strong>${name}</strong>, je staat genoteerd voor <strong>${s.name}</strong><br>op ${dateNice} om ${chosenTime}.`;
+  $("#bookForm").style.display = "none";
+  $("#confirm").style.display = "block";
+};
+
+$("#again").onclick = () => {
+  $("#bookForm").reset();
+  renderSlots();
+  $("#confirm").style.display = "none";
+  $("#bookForm").style.display = "grid";
+};
+</script>
+</body>
+</html>
