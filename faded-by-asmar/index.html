@@ -49,8 +49,8 @@
 
   /* Hero */
   .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 68px;
-    background: linear-gradient(90deg, rgba(14,14,14,.95) 30%, rgba(14,14,14,.55)),
-                url("https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1800&q=70") center/cover; }
+    background: linear-gradient(90deg, rgba(14,14,14,.94) 22%, rgba(14,14,14,.55) 58%, rgba(14,14,14,.28)),
+                url("images/ig-02.jpg") center 40%/cover; }
   .hero h1 { font-size: clamp(3.4rem, 11vw, 7.5rem); margin: 14px 0 18px; }
   .hero h1 span { color: var(--gold); }
   .hero p { color: var(--muted); font-size: 1.15rem; max-width: 480px; margin-bottom: 32px; }
@@ -113,6 +113,7 @@
   .review .name { font-weight: 600; }
   .review .when { color: var(--muted); font-size: .8rem; }
   .review p { color: #d7d2c8; font-size: .95rem; margin-top: 8px; }
+  .review .shot { width: 100%; margin-top: 14px; border-radius: 10px; aspect-ratio: 4/3; object-fit: cover; display: block; }
   .g-link { display: inline-block; margin-top: 30px; color: var(--gold); text-decoration: none; font-weight: 500; }
 
   /* Gallery */
@@ -288,6 +289,7 @@
     <div class="eyebrow">Ons werk</div>
     <h2>Recente cuts</h2>
     <div class="gallery" id="gallery"></div>
+    <p class="sub" style="margin-top:18px">Foto's van Instagram en van Google-reviews.</p>
     <a class="g-link" id="igLink" target="_blank" rel="noopener">Volg ons op Instagram →</a>
   </div>
 </section>
@@ -334,7 +336,7 @@
 <script>
 /* =========================================================
    CONFIG – echte gegevens van Faded by Asmar
-   (bron: Knipklok, inzutphen.nl, OpenStreetMap)
+   (bron: Google Maps, Knipklok, Instagram, OpenStreetMap)
    ========================================================= */
 const CONFIG = {
   name: "Faded by Asmar",
@@ -345,11 +347,11 @@ const CONFIG = {
   address: "Nieuwstad 4, 7201 NP Zutphen",
   lat: 52.1430817,
   lng: 6.196679,
-  reviewsUrl: "https://knipklok.be/kapperszaak/faded-by-asmar",
-  reviewSource: "Knipklok",
+  reviewsUrl: "https://www.google.com/maps/place/?q=place_id:ChIJq8PuMG-Ux0cRchdXfAuuq2M",
+  reviewSource: "Google",
   instagram: "https://www.instagram.com/fadedbyasmar/",
   rating: "4,8",
-  reviewCount: null,
+  reviewCount: 103,
 
   services: [
     { name: "Haren knippen",   price: 22.99, duration: 30, desc: "Knipbeurt of fade naar wens, strak afgewerkt." },
@@ -376,16 +378,28 @@ const CONFIG = {
     0: null,
   },
 
-  // Echte reviews van Knipklok
+  // Recente Google-reviews (4,8 uit 103)
   reviews: [
-    { name: "Sebastiaan", barber: "Hamos",  text: "Hamos heeft me geweldig goed geadviseerd en vervolgens een prachtig kapsel en scherp gesneden baard geleverd!" },
-    { name: "Zakaria",    barber: "Asmar",  text: "Goeie service en werkt precies" },
-    { name: "Valentijn",  barber: "Mustie", text: "Erg tevreden!" },
-    { name: "Gijs",       barber: "Mustie", text: "Goed gedaan" },
+    { name: "Beyaz Kucukkose", when: "2 jaar geleden", text: "Bij Fadedbyasmar had ik een geweldige ervaring! Vanaf het moment dat ik binnenkwam, voelde ik me welkom en op mijn gemak. Asmar is duidelijk een echte vakman die precies weet wat hij doet. Hij neemt de tijd om te luisteren naar je wensen en geeft professioneel advies, wat resulteert in een strak en perfect uitgevoerd kapsel. De aandacht voor detail en de zorg die hij in elke knipbeurt steekt, maken echt het verschil. De sfeer in de zaak is ook top – relaxed en vriendelijk. Ik ben super tevreden met mijn nieuwe look en kom zeker terug. Aanrader voor iedereen die een topkwaliteit fade wil!" },
+    { name: "Andre van der Meer", when: "een maand geleden", text: "Net mijn zoontje van 15 maanden laten knippen. Nemen goed de tijd en super vriendelijk. Wij komen hier zeker terug!" },
+    { name: "Storm", when: "8 maanden geleden", text: "Topkapper, ben met een vriend zonder afspraak naar binne gekomen goed geknipt en fantastische service gekregen" },
+    { name: "Jelle van der Pal", when: "3 maanden geleden", text: "Prima persoonlijke aandacht, fijne kapper, meteen tijd." },
+    { name: "HASAN ALLOUCH", when: "een maand geleden", text: "Hallo allemaal dankjewel alstublieft graag gedaan vandaag Faded by Asmar  lekker knepen" },
   ],
 
-  // Foto's van Instagram (@fadedbyasmar); leeg = sectie verborgen
-  gallery: [],
+  // Foto's van Instagram (@fadedbyasmar) en één interieurfoto uit Google-reviews
+  gallery: [
+    { src: "images/ig-08.jpg", alt: "Fade bij Faded by Asmar" },
+    { src: "images/ig-02.jpg", alt: "Knipbeurt in de zaak aan de Nieuwstad" },
+    { src: "images/ig-06.jpg", alt: "Skin fade bij Faded by Asmar" },
+    { src: "images/ig-03.jpg", alt: "Crop fade bij Faded by Asmar" },
+    { src: "images/ig-05.jpg", alt: "Krullen met een fade bij Faded by Asmar" },
+    { src: "images/ig-04.jpg", alt: "Franse crop bij Faded by Asmar" },
+    { src: "images/ig-07.jpg", alt: "Taper fade bij Faded by Asmar" },
+    { src: "images/ig-07b.jpg", alt: "Taper fade, achteraanzicht" },
+    { src: "images/ig-01.jpg", alt: "Kinderen knippen bij Faded by Asmar" },
+    { src: "images/greview-02.jpg", alt: "De zaak, foto uit een Google-review" },
+  ],
 };
 
 /* ========================================================= */
@@ -439,14 +453,19 @@ $("#barber").innerHTML = `<option value="">Maakt niet uit</option>` +
 // Reviews
 $("#reviewList").innerHTML = CONFIG.reviews.map(r => `
   <div class="review">
-    <div class="who"><div class="avatar">${r.name[0]}</div><div><div class="name">${r.name}</div><div class="when">${CONFIG.reviewSource}-review${r.barber ? ` · geholpen door ${r.barber}` : ""}</div></div></div>
+    <div class="who"><div class="avatar">${r.name[0]}</div><div><div class="name">${r.name}</div><div class="when">${r.when ? `${r.when} · ` : ""}${CONFIG.reviewSource}-review${r.barber ? ` · geholpen door ${r.barber}` : ""}</div></div></div>
     <span class="stars">★★★★★</span>
     <p>${r.text}</p>
+    ${r.photo ? `<img class="shot" src="${r.photo}" alt="Foto bij de review van ${r.name}">` : ""}
   </div>`).join("");
 
 // Gallery
 if (CONFIG.gallery.length) {
-  $("#gallery").innerHTML = CONFIG.gallery.map(src => `<img src="${src}" alt="Knipbeurt bij ${CONFIG.name}">`).join("");
+  $("#gallery").innerHTML = CONFIG.gallery.map(item => {
+    const src = typeof item === "string" ? item : item.src;
+    const alt = typeof item === "string" ? `Knipbeurt bij ${CONFIG.name}` : item.alt;
+    return `<img src="${src}" alt="${alt}" loading="lazy">`;
+  }).join("");
 } else {
   $("#werk").hidden = true;
 }
